@@ -128,6 +128,10 @@ router.get('/test', (req, res, next) => {
       })
     })
   })
+  // 处理404页面
+  .all('*', (req, res) => {
+      res.send(`您的页面飞走啦-----  *-*  <a href="/">返回首页？</a>`)
+  })
 // 使用路由器中间间处理数据请求
 // 4 暴露静态资源
 app.use('/public', express.static('./public'))
